@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    #Configurations for emulate Postgres with H2
+    #    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    #    username: nathyane
+    #    password: lalala
+    #    driver-class-name: org.h2.Driver
+
+    #Configurations for Postgres
+    url: jdbc:postgresql://localhost:5432/overcooking-test
+    username: postgres
+    password: lalala
+    driver-class-name: org.postgresql.Driver
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+      type:
+        preferred_duration_jdbc_type=INTERVAL_SECOND
+    #    show-sql: true
+    properties:
+      hibernate:
+        type:
+          preferred_duration_jdbc_type=INTERVAL_SECOND
+        format_sql: true
+
+logging:
+  level:
+    com:
+      baeldung:
+        testloglevel: DEBUG
